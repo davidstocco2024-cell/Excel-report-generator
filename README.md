@@ -1,64 +1,45 @@
-# Excel Report Generator for Construction Companies
+# ⚡ Automated Excel Report Generator (Python & OpenPyXL)
 
-**Automate expense report generation for construction and real estate projects.**
-
-**Turn messy CSV/JSON data into professional Excel reports in seconds.**
+An automated data processing and reporting tool built with **Python**, **Pandas**, and **OpenPyXL**. It converts unorganized, raw data (CSV/JSON) into fully formatted, presentation-ready Excel reports—reducing manual report generation time from hours to seconds.
 
 ---
 
-## The Problem
+## 🎯 Business Problem
 
-Construction companies waste many hours every month manually cleaning expense data from suppliers and subcontractors. Inconsistent formats, wrong dates, and encoding issues make the process slow and error-prone.
+Operations and finance teams often waste hours manually copying, pasting, cleaning, and formatting daily/weekly report files. Manual manipulation introduces high human error rates, inconsistent formatting, date/encoding mismatches, and broken formulas.
 
-## The Solution
-
-This tool automates the complete process:
-- Reads messy CSV and JSON files
-- Automatically cleans data and fixes encoding issues
-- Intelligently parses dates (multiple formats)
-- Generates clean, professional Excel reports with formatting and charts
-
-**Result:** What used to take 4-6 hours now takes less than 1 minute.
+This script automates the entire end-to-end reporting pipeline: data extraction, cleaning, date normalization, cell formatting, dynamic formula insertion, and visual styling.
 
 ---
 
-## Key Features
+## ✨ Key Features & Capabilities
 
-- Multi-format support (CSV, JSON, Excel)
-- Smart encoding detection (UTF-8, Latin-1, CP1252)
-- Intelligent date parsing with `dateutil`
-- Advanced data cleaning using regex
-- Professional Excel reports with styling, formulas, and charts
-- Full logging and robust error handling
-- Command-line interface with `click`
+* **Automated Data Ingestion:** Safely handles varied raw file encodings (`UTF-8`, `Latin-1`, `cp1252`) without script failure.
+* **Data Cleansing & Validation:** Strips whitespace, normalizes date strings using `dateutil`, applies regex text cleaning, and handles missing values.
+* **Automated Excel Formatting:**
+  * Auto-adjusts column widths based on cell content length.
+  * Formats currency, percentage, and date values natively in Excel (`$#,##0.00`, `YYYY-MM-DD`).
+  * Applies professional headers, border styles, and conditional highlighting using `openpyxl`.
+* **Formula Injection:** Automatically inserts dynamic summary formulas (`SUM`, `AVERAGE`, `COUNTIF`) at the footer of report tables.
+* **Robust Error Handling & Logging:** Implements structured logging (`logging` module) and path handling (`pathlib`) to track execution and audit pipeline failures.
 
 ---
 
-## Quick Start
+## 🛠️ Technical Stack
+
+* **Language:** Python 3.10+
+* **Data Manipulation:** Pandas, NumPy
+* **Excel Engine:** OpenPyXL, Dateutil, Pathlib, Regex
+* **Core Concepts:** Process Automation, Data Quality, File I/O, Error Handling, Audit Logging
+
+---
+
+## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/davidstocco2024-cell/Excel-report-generator.git
+# Clone the repository
+git clone [https://github.com/davidstocco2024-cell/Excel-report-generator.git](https://github.com/davidstocco2024-cell/Excel-report-generator.git)
 cd Excel-report-generator
-pip install -r requirements.txt
-python main.py --input datos/gastos_abril.csv --output reportes/reporte_abril.xlsx
 
-
-
-Technologies
-Python 3.10+
-openpyxl
-python-dateutil
-python-dotenv
-click
-
-Commercial Use
-This repository is private for demonstration purposes only.
-For commercial licensing, customization, or implementation services, please contact me.
-
-Contact
-David Stocco
-Python Automation Specialist for Construction Companies
-📧 dstoccoanalytics@gmail.com
-📍 Mendoza, Argentina (Remote friendly - Australia & USA)
-
-Made for construction companies in Mendoza and beyond.
+# Install dependencies
+pip install pandas openpyxl python-dateutil
